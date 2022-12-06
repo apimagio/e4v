@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./style.css">
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div class="descriptor">
+                <div id="indicator">
+             <!-- html indicator content -->
+                    i° (html)
+                <br>
+            </div> <!-- indicator-->
+                <img onmouseover="timeInfo()" onmouseout="noInfo()" id="info" src="./info-icon.png" class="timeInfo" alt="info"><br>
+                Here is the space for a static html driven description of the elevator's operations.
+        </div> <!-- descriptor -->
+
+        <!-- obsah --> 
+        <div id="root">
+        <br><b><span class="notice">[ro.b] //Message if the JS app is not running.</span></b>
+            
+        	<script type="text/babel"> console.log("cnslTestHtmlIx");</script>
+        	<script src="./index.js" type="text/babel"></script>
+        </div> <!-- root-->
+    </body>
+</html>
+

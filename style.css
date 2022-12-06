@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    padding: 3px;
+}
+
+h1 {
+  color: green;
+  text-align: left;
+}
+
+.notice {
+  color: purple;  
+}
+
+.timeInfo {
+  width:77px;
+  font-weight: bold;
+  font-size:50px;
+  color: #03b400;
+}
+
+.descriptor {
+  padding: 20px;
+  background-color: #ccff84;
+  color: #30041d;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.descriptor2 {
+  padding: 20px;
+  background-color: #adadad;
+  color: #30041d;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.footbar {
+  padding: 20px;
+  background-color: #adadad;
+  color: #30041d;
+  /* opacity: 1;
+  transition: opacity 0.6s; */
+  margin-bottom: 3px;
+}
