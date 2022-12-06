@@ -11,6 +11,7 @@ Aplication has X classes and uses functions for:
 <li> occupancy control //if measuring signal is 1 </li>
 <li> door safety control //if all doors lock checks are 1 </li>
 <li> functionality control //if system indication is 1 </li>
+<li> accessibility of controller //if accessStatus = 1 </li> 
 <li> opening the door on floor where its stops </li>
 <li> release all doors lock, when elevator is not occupied </li>
 <li> change direction allowed, if the top floor of direction is reached </li>
