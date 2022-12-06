@@ -2,6 +2,7 @@
 
 <h3>author information</h3>
 Martin Kovalcik
+aplikacia bezi na URL: https://ponovom.online
 <br>
 <h3>description of your solution</h3>
 Simple Javascript application simulating the basic functions of the elevator of a four-story building.
