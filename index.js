@@ -81,6 +81,23 @@ class ExtController extends Controller {
    
 }
 
+class IxtController extends Controller {
+    constructor(accessStatus, elevatorStatus, floorNumbers, floorToGo) {
+       super(accessStatus, elevatorStatus, floorNumbers);
+       this.floorToGo = floorToGo;
+       }
+    
+    //ctrl fn ExtController obj
+    sMsgIntCtrlerShow() {
+        return this.sMsgIntCtrlerShow() + "intAdd" + this.floorToGo;
+    }
+
+     
+    intElevatorCall(n_floorToGo) {    
+        return "Elevator is going to " + this.floorToGo;
+    } 
+}
+
 
 /*
 //App workflow using classes
@@ -99,6 +116,7 @@ class ExtController extends Controller {
     }
     controllerServiceTest();
 
+    //accessStatus, elevatorStatus, floorNumbers, ctrlerFloor  
     let extCtrler1 = new ExtController(0,1,4,1);
     let extCtrler2 = new ExtController(0,1,4,2);
     let extCtrler3 = new ExtController(0,1,4,3);
@@ -108,6 +126,11 @@ class ExtController extends Controller {
 
     //tlacidlam na externom paneloch/kontroleroch by boli pridelene tieto volania metod objektu
     console.log(extCtrler4.extElevatorCall());
+
+    //accessStatus, elevatorStatus, floorNumbers
+    let intCtrler = new IntController(0,1,4);
+
+    console.log(intCtrler.sMsgIntCtrlerShow());
 
     /*
     function getExtCtrlerFloor() {
