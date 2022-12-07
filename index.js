@@ -2,25 +2,31 @@
 console.log ("cnslTestJs");
 
 class Controller {
-    constructor(accessStatus, elevatorStatus) {
+    constructor(accessStatus, elevatorStatus, floorNumbers) {
         this.accessStatus = accessStatus;
         this.elevatorStatus = elevatorStatus;
+        this.floorNumbers = floorNumbers;
+    }
+
+    sMsg () {
+        return "sMsg from Controller";
     }
 
     getControllerStatus() {
         return this.accessStatus + " (is controller status) and elevator status is: " + this.elevatorStatus; 
     }
 
-    //elevatorStatus (idle, toUp, toDown) > elStat = [0, 1, 2];
+    //elevatorStatus options (idle, toUp, toDown) > elStat = [0, 1, 2];
     setElevatorStatus(setElStat) {
         this.elevatorStatus = setElStat;
     }
 
+    /* 
     getElevatorStatus() {
         let getElStatStatus;
         switch (this.elevatorStatus) {
             case 0:
-                getElStatStatus = "Elevator is idleing..";
+                getElStatStatus = "Elevator is idle.";
             break;
             case 1:
                 getElStatStatus = "Elevator is moving up..";
@@ -31,11 +37,10 @@ class Controller {
             default:
                 getElStatStatus = "No value found";
         } 
-        return (getElStatStatus);
+        //return (getElStatStatus);
         //console.log(getElStatus);
     }
-
-
+*/
     getElevatorStatus2() {
         if (this.elevatorStatus== 2) {
             return ("Elevator is moving down!");
@@ -44,18 +49,38 @@ class Controller {
             return ("Elevator is moving up!");
         }
         else {
-            return ("Elevator is idling!");
+            return ("Elevator is idle!");
         }
     }
 
-} //end of class Controller
+} /* end of class Controller */
 
 class ExtController extends Controller {
-    constructor(accessStatus, elevatorStatus, currentFloor) {
-       super(accessStatus, elevatorStatus);
-       this.currentFloor = currentFloor;
+    constructor(accessStatus, elevatorStatus, floorNumbers, ctrlerFloor) {
+       super(accessStatus, elevatorStatus, floorNumbers);
+       this.ctrlerFloor = ctrlerFloor;
        }
+    
+    //ctrl fn ExtController obj
+    sMsgExtCtrlerShow() {
+        return this.sMsg() + "extAdd" + this.ctrlerFloor;
+    }
+
+     
+    extElevatorCall() {    
+        //rtrn lastElStopPosition + " (is last elev. stop position);
+        return "Elevator is going to " + this.ctrlerFloor;
+    }
+
+    /* 
+    getElevatorLastStopPosition() {
+        if (afterElevStopAndDoorActionCtrl) {
+            return ctrler.Floor;
+        }
+    }*/
+   
 }
+
 
 /*
 //App workflow using classes
@@ -63,7 +88,7 @@ class ExtController extends Controller {
 
 //basic controller service test/verification
     function controllerServiceTest() {
-        let ctrlerServCtrl = new Controller(1,0);
+        let ctrlerServCtrl = new ExtController(1,0,4);
         //document.getElementById("indicator").innerHTML = "tstController is accessible, accessStatus = "+tstController.controllerStatus();
         console.log (ctrlerServCtrl); 
         //independent manual switch for elevatorStatus
@@ -74,8 +99,23 @@ class ExtController extends Controller {
     }
     controllerServiceTest();
 
+    let extCtrler1 = new ExtController(0,1,4,1);
+    let extCtrler2 = new ExtController(0,1,4,2);
+    let extCtrler3 = new ExtController(0,1,4,3);
+    let extCtrler4 = new ExtController(0,1,4,4);
 
-//independent 2 JS functions
+    //console.log("extCtrler4 is on floor: " + extCtrler4.ctrlerFloor)
+
+    //tlacidlam na externom paneloch/kontroleroch by boli pridelene tieto volania metod objektu
+    console.log(extCtrler4.extElevatorCall());
+
+    /*
+    function getExtCtrlerFloor() {
+        let ctrlerFloor = extCtrler1.ctrlerFloor;
+        return ctrlerFloor;
+    }*/
+
+    //independent 2 JS functions for counting approximete time of elevators disposition on floor of the external controlller
 function timeInfo() {
     document.getElementById('indicator').innerHTML = '<span class="timeInfo">Elevator comes in about X seconds.</span>'; 
 }
