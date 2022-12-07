@@ -58,5 +58,5 @@ TO OPTIMALIZE<br><br>
 &nbsp;&nbsp;    function getElevOccupacyStatus() of object Elevator //for direct elevator call OR putting call into the array<br>
 <br><br>
 
-#steps for compilation and debugging
+<h3>steps for compilation and debugging</h3>
 Unrequired processes. !!React copmponents, because of no production need, are dependent on CDNs babel transpiler.
