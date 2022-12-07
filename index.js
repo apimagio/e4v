@@ -23,27 +23,20 @@ class Controller {
         this.elevatorStatus = setElStat;
     }
 
-    /* 
     getElevatorStatus() {
-        let getElStatStatus;
         switch (this.elevatorStatus) {
             case 0:
-                getElStatStatus = "Elevator is idle.";
-            break;
+                return "Elevator is idle.";
             case 1:
-                getElStatStatus = "Elevator is moving up..";
-            break;
+                return "Elevator is moving up.";
             case 2:
-                getElStatStatus = "Elevator is moving down..";
-            break;   
+                return "Elevator is moving down.";
             default:
-                getElStatStatus = "No value found";
+                return "No value found";
         } 
-        //return (getElStatStatus);
-        //console.log(getElStatus);
     }
-*/
-    //replacement of the function above, which doesnt worked properly
+
+    /*  //1st fn 
     getElevatorStatus2() {
         if (this.elevatorStatus== 2) {
             return ("Elevator is moving down!");
@@ -55,6 +48,7 @@ class Controller {
             return ("Elevator is idle!");
         }
     }
+    */
 
 } /* end of class Controller */
 
@@ -64,12 +58,12 @@ class ExtController extends Controller {
        this.ctrlerFloor = ctrlerFloor;
        }
     
-    //ctrl fn ExtController obj
+    //simple message object verifier2
     sMsgShow() {
         return this.sMsg() + " & extAdd = " + this.ctrlerFloor;
     }
 
-    //call elevator on externak controller     
+    //call elevator on external controller     
     extElevatorCall() {    
         //rtrn lastElStopPosition + " (is last elev. stop position);
         return "ext_msg: Elevator is going to " + this.ctrlerFloor;
@@ -89,13 +83,13 @@ class IntController extends Controller {
        super(accessStatus, elevatorStatus, floorNumbers);
     }
     
-    //ctrl fn intController obj
+    //simple message object verifier2
     sMsgShow() {
-        return this.sMsg() + " & no intCtrler prop. add ";
+        return this.sMsg() + " & no intController prop. add ";
     }
 
     //selecting the floor where to go
-    intCtrlerGoTo(floorToGo) {    
+    intControllerGoTo(floorToGo) {    
         return "int_msg: Elevator is going to selected floor - " + floorToGo;
     } 
 }
@@ -107,38 +101,38 @@ class IntController extends Controller {
 
 //basic controller service test/verification
     function controllerServiceTest() {
-        let ctrlerServCtrl = new ExtController(1,0,4);
+        let controllerServiceControl = new ExtController(1,0,4);
         //document.getElementById("indicator").innerHTML = "tstController is accessible, accessStatus = "+tstController.controllerStatus();
-        console.log (ctrlerServCtrl); 
+        console.log (controllerServiceControl); 
         //independent manual switch for elevatorStatus
-        //ctrlerServCtrl.setElevatorStatus(2);
-        console.log ("Controller /service test/ is accessible. The accessStatus = " + ctrlerServCtrl.getControllerStatus());
-        console.log ("Self (condition based) elevator status is: " + ctrlerServCtrl.getElevatorStatus2());
-        //console.log ("Self (switch based) elevator status is: " + ctrlerServCtrl.getElevatorStatus());
+        //controllerServiceControl.setElevatorStatus(2);
+        console.log ("Controller /service test/ is accessible. The accessStatus = " + controllerServiceControl.getControllerStatus());
+        //console.log ("Self (condition based) elevator status is: " + controllerServiceControl.getElevatorStatus());
+        console.log ("Self (switch based) elevator status is: " + controllerServiceControl.getElevatorStatus());
     }
     controllerServiceTest();
 
     //1 accessStatus, 2 elevatorStatus, 3 floorNumbers, 4 ctrlerFloor  
-    let extCtrler1 = new ExtController(0,1,4,1);
-    let extCtrler2 = new ExtController(0,1,4,2);
-    let extCtrler3 = new ExtController(0,1,4,3);
-    let extCtrler4 = new ExtController(0,1,4,4);
+    let extController1 = new ExtController(0,1,4,1);
+    let extController2 = new ExtController(0,1,4,2);
+    let extController3 = new ExtController(0,1,4,3);
+    let extController4 = new ExtController(0,1,4,4);
 
-    //console.log("ext_msg: extCtrler4 is on floor: " + extCtrler4.ctrlerFloor)
-    //console.log("ext_msg:" + extCtrler4.sMsgShow());
+    //console.log("ext_msg: extController4 is on floor: " + extCtrler4.ctrlerFloor)
+    //console.log("ext_msg:" + extController4.sMsgShow());
 
-    //to the buttons on external panels/controllers would be assigned those object methode invokation
-    console.log(extCtrler4.extElevatorCall());
+    //to the buttons on external panels/controllers would be assigned object method invocation like this
+    console.log(extController4.extElevatorCall());
 
     //1 accessStatus, 2 elevatorStatus, 3 floorNumbers
-    let intCtrler = new IntController(0,1,4);
+    let intController = new IntController(0,1,4);
 
-    //console.log("int_msg: " + intCtrler.sMsgShow());
-    console.log(intCtrler.intCtrlerGoTo(2));
+    //console.log("int_msg: " + intController.sMsgShow());
+    console.log(intController.intControllerGoTo(2));
 
     /*
-    function getExtCtrlerFloor() {
-        let ctrlerFloor = extCtrler1.ctrlerFloor;
+    function getExtControlerFloor() {
+        let controllerFloor = extController1.ctrlerFloor;
         return ctrlerFloor;
     }*/
 
