@@ -28,7 +28,7 @@ Functions for future evaluating
 <br><br>
 <i>Notes:</i><br>
 Elevator is able to travel between floors.<br>
-House with elevator has 4 floor. //I hope, that I understood correctly, that not elevator has 4 floors (as described in the assignment) ;-) <br>
+House with elevator has 4 floor. <br>
 , there are two basic panels/controllers for manipulating (external and internal)<br>
 , elevator starts going in direction of the first button pressed
 , upon further external calls from the direction of movement, the elevator stops on the floor from which it was called
