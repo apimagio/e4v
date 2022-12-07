@@ -45,6 +45,8 @@ ESX6 + Javascript + React JSX
 &nbsp;&nbsp;    function setElevatorStatus(ARG) of object Controller //for setting elev. activity "idle", "up" and "down" [0,1,2] for controller<br><br>
 <i>Get elevator status</i><br>
 &nbsp;&nbsp;    function getElevatorStatus() of object Controller //for getting elev. activity "idle", "up" and "down" [0,1,2] from controller for indication<br><br>
+<i>Elevator call</i><br>
+&nbsp;&nbsp;    ExtController class > object method "elevatorCall()"<br><br>
 
 
 <br><br><br><br>
