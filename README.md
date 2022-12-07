@@ -33,16 +33,24 @@ ESX6 + Javascript + React JSX
 <h3>description of your elevator alghorhitm</h3>
 <b>Eleavator service controls:</b><br><br>
 <i>Controller accessibility</i><br>
-&nbsp;&nbsp;    if accessStatus = 1
-<br><br>
-<i> Occupancy control </i><br>
-&nbsp;&nbsp;    if measuring signal is 1
-<br><br>
+&nbsp;&nbsp;    function getControllerStatus() of object Controller //for basic controll of the controller functionality<br><br>
+<i>Set elevator status</i><br>
+&nbsp;&nbsp;    function setElevatorStatus(ARG) of object Controller //for setting elev. activity "idle", "up" and "down" [0,1,2] for controller
+<i>Get elevator status</i><br>
+&nbsp;&nbsp;    function getElevatorStatus() of object Controller //for getting elev. activity "idle", "up" and "down" [0,1,2] from controller for indication
+
+
+
+
+<br><br><br><br>
+OPTIONAL FUNCTIONS FOR LATER DEVELOPEMENT
 <i> Door safety control </i><br>
-&nbsp;&nbsp;    if all doors lock checks are 1
+&nbsp;&nbsp;    function getDoorLockedStatus() of object Elevator //for checking the doors, before the elevator move<br>
 <br><br>
-<i> functionality control </i><br>
-&nbsp;&nbsp;    if system indication is 1 
+
+TO OPTIMALIZE<br><br>
+<i> Occupancy control </i><br>
+&nbsp;&nbsp;    function getElevOccupacyStatus() of object Elevator //for direct elevator call OR putting call into the array<br>
 <br><br>
 
 #steps for compilation and debugging
