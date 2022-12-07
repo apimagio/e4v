@@ -26,20 +26,24 @@ House with elevator has 4 floor. //I hope, that I understood correctly, that not
 , elevator starts going in direction of the first button pressed
 , upon further external calls from the direction of movement, the elevator stops on the floor from which it was called
 <br>
+
 <h3>used technologies</h3>
-ESX6 + Javascript 
+ESX6 + Javascript + React JSX
 
-<h3>description of your elevator alghorhitm<h3>
-<b>Eleavator service controls:</b><br>
-<b>Controller accessibility</b><br>
- //if accessStatus = 1
-<b> Occupancy control </b><br>
-//if measuring signal is 1
-<b> Door safety control </b><br>
-//if all doors lock checks are 1
-<b> functionality control </b><br>
-//if system indication is 1 
-
+<h3>description of your elevator alghorhitm</h3>
+<b>Eleavator service controls:</b><br><br>
+<i>Controller accessibility</i><br>
+&nbsp;&nbsp;    if accessStatus = 1
+<br><br>
+<i> Occupancy control </i><br>
+&nbsp;&nbsp;    if measuring signal is 1
+<br><br>
+<i> Door safety control </i><br>
+&nbsp;&nbsp;    if all doors lock checks are 1
+<br><br>
+<i> functionality control </i><br>
+&nbsp;&nbsp;    if system indication is 1 
+<br><br>
 
 #steps for compilation and debugging
 Unrequired processes. !!React copmponents, because of no production need, are dependent on CDNs babel transpiler.
