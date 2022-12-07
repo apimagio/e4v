@@ -3,6 +3,7 @@
 <h3>author information</h3>
 Martin Kovalcik<br>
 Application runs on: https://ponovom.online
+For seeing complete application output its necessary to run program in IDE like VS Code. 
 <br>
 <h3>description of your solution</h3>
 Simple Javascript application simulating the basic functions of the elevator of a four-story building.
