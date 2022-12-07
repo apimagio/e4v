@@ -30,7 +30,7 @@ Functions for future evaluating
 Elevator is able to travel between floors.<br>
 House with elevator has 4 floor. <br>
 , there are two basic panels/controllers for manipulating (external and internal)<br>
-, elevator starts going in direction of the first button pressed
+, elevator starts going in direction of the first button pressed<br>
 , upon further external calls from the direction of movement, the elevator stops on the floor from which it was called
 <br>
 
