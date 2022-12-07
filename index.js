@@ -7,68 +7,75 @@ class Controller {
         this.elevatorStatus = elevatorStatus;
     }
 
-    //elevatorStatus (idle, toUp, toDown), tm.>> const eS = [0, 1, 2];
-    setElevatorStatus(sES) {
-        this.elevatorStatus = sES;
+    getControllerStatus() {
+        return this.accessStatus + " (is controller status) and elevator status is: " + this.elevatorStatus; 
+    }
+
+    //elevatorStatus (idle, toUp, toDown) > elStat = [0, 1, 2];
+    setElevatorStatus(setElStat) {
+        this.elevatorStatus = setElStat;
     }
 
     getElevatorStatus() {
-        this.value;
-        //gES = this.elevatorStatus;
+        let getElStatStatus;
         switch (this.elevatorStatus) {
             case 0:
-                this.value = "Elevator is idle.";
+                getElStatStatus = "Elevator is idleing..";
             break;
             case 1:
-                this.value = "Elevator is moving up.";
+                getElStatStatus = "Elevator is moving up..";
             break;
             case 2:
-                this.value = "Elevator is moving down.";
+                getElStatStatus = "Elevator is moving down..";
             break;   
             default:
-                this.value = "No value found";
+                getElStatStatus = "No value found";
         } 
+        return (getElStatStatus);
+        //console.log(getElStatus);
     }
+
 
     getElevatorStatus2() {
         if (this.elevatorStatus== 2) {
-            console.log("Elevator status is moving down.");
+            return ("Elevator is moving down!");
         }
         else if (this.elevatorStatus== 1) {
-            console.log("Elevator status is moving up.");
+            return ("Elevator is moving up!");
         }
         else {
-            console.log("Elevator status is idling.");
+            return ("Elevator is idling!");
         }
     }
 
-    controllerStatus() {
-        return this.accessStatus + "(ctrl) and elevator is: " + this.elevatorStatus;
-    }
-}
+} //end of class Controller
 
 class ExtController extends Controller {
     constructor(accessStatus, elevatorStatus, currentFloor) {
        super(accessStatus, elevatorStatus);
        this.currentFloor = currentFloor;
        }
-    }
+}
 
-    //basic testing controller verification
-    function serviceTestController() {
-        let tstController = new Controller(1,0);
+/*
+//App workflow using classes
+*/
+
+//basic controller service test/verification
+    function controllerServiceTest() {
+        let ctrlerServCtrl = new Controller(1,0);
         //document.getElementById("indicator").innerHTML = "tstController is accessible, accessStatus = "+tstController.controllerStatus();
-        console.log (tstController); 
-        //extra switch for elevatorStatus
-        tstController.setElevatorStatus(2);
-        console.log ("tstController is accessible, accessStatus = "+ tstController.controllerStatus());
-        //console.log ("elevator status is: " + tstController.getElevatorStatus2());
-        tstController.getElevatorStatus2();
-        //console.log ("elevator status is: " + tstController.getElevatorStatus());
+        console.log (ctrlerServCtrl); 
+        //independent manual switch for elevatorStatus
+        //ctrlerServCtrl.setElevatorStatus(2);
+        console.log ("Controller /service test/ is accessible. The accessStatus = " + ctrlerServCtrl.getControllerStatus());
+        console.log ("Self (condition based) elevator status is: " + ctrlerServCtrl.getElevatorStatus2());
+        //console.log ("Self (switch based) elevator status is: " + ctrlerServCtrl.getElevatorStatus());
     }
-    serviceTestController();
+    controllerServiceTest();
 
 
+//independent 2 JS functions
 function timeInfo() {
     document.getElementById('indicator').innerHTML = '<span class="timeInfo">Elevator comes in about X seconds.</span>'; 
 }
@@ -77,7 +84,10 @@ function noInfo() {
     document.getElementById('indicator').innerHTML = ''; 
 }
 
-/* React custom components */
+
+/* 
+//React custom components 
+*/
 
 function EntPreview() {
     return <h5>JS React elevator preview </h5>    
