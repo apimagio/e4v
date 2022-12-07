@@ -13,7 +13,7 @@ Aplication has X classes and uses functions for:
 <li> controller accessibility </li> 
 <li> elevator functionality control </li>
 <li> elevator call (external controller) </li>
-<li> elevator moveTo (internal controller)</li>
+<li> elevator goTo (internal controller)</li>
 </ul>
 <b>For application output is needed to run it in IDE, for example VS Code.</b>
 
@@ -50,7 +50,8 @@ ESX6 + Javascript + React JSX
 &nbsp;&nbsp;    function getElevatorStatus() of object Controller //for getting elev. activity "idle", "up" and "down" [0,1,2] from controller for indication<br><br>
 <i>Elevator call</i><br>
 &nbsp;&nbsp;    class ExtController > object method "elevatorCall()"<br><br>
-
+<i>Elevator goTo</i><br>
+&nbsp;&nbsp;    class IntController > object method "intCtrlerGoTo(floorToGo)"<br><br>
 
 <br><br><br><br>
 OPTIONAL FUNCTIONS FOR LATER DEVELOPEMENT
