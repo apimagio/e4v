@@ -62,8 +62,8 @@ class ExtController extends Controller {
        }
     
     //ctrl fn ExtController obj
-    sMsgExtCtrlerShow() {
-        return this.sMsg() + "extAdd" + this.ctrlerFloor;
+    sMsgShow() {
+        return this.sMsg() + " extAdd " + this.ctrlerFloor;
     }
 
      
@@ -81,20 +81,19 @@ class ExtController extends Controller {
    
 }
 
-class IxtController extends Controller {
-    constructor(accessStatus, elevatorStatus, floorNumbers, floorToGo) {
+class IntController extends Controller {
+    constructor(accessStatus, elevatorStatus, floorNumbers) {
        super(accessStatus, elevatorStatus, floorNumbers);
-       this.floorToGo = floorToGo;
-       }
+    }
     
-    //ctrl fn ExtController obj
-    sMsgIntCtrlerShow() {
-        return this.sMsgIntCtrlerShow() + "intAdd" + this.floorToGo;
+    //ctrl fn intController obj
+    sMsgShow() {
+        return this.sMsg() + " no intCtrler prop. add";
     }
 
      
-    intElevatorCall(n_floorToGo) {    
-        return "Elevator is going to " + this.floorToGo;
+    intElevatorGoTo() {    
+        return "int_msg: Elevator is going to selected floor"; //+ floorToGo;
     } 
 }
 
@@ -123,6 +122,7 @@ class IxtController extends Controller {
     let extCtrler4 = new ExtController(0,1,4,4);
 
     //console.log("extCtrler4 is on floor: " + extCtrler4.ctrlerFloor)
+    console.log("ext_msg444:" + extCtrler4.sMsgShow());
 
     //tlacidlam na externom paneloch/kontroleroch by boli pridelene tieto volania metod objektu
     console.log(extCtrler4.extElevatorCall());
@@ -130,7 +130,7 @@ class IxtController extends Controller {
     //accessStatus, elevatorStatus, floorNumbers
     let intCtrler = new IntController(0,1,4);
 
-    console.log(intCtrler.sMsgIntCtrlerShow());
+    //console.log(intCtrler.intElevatorGoTo(2));
 
     /*
     function getExtCtrlerFloor() {
