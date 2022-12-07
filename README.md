@@ -13,6 +13,7 @@ Aplication has X classes and uses functions for:
 <li> elevator call (external controller) </li>
 <li> elevator moveTo (internal controller)</li>
 </ul>
+<b>For application output is needed to run it in IDE, for example VS Code.</b>
 
 <br><br>
 Functions for future evaluating
