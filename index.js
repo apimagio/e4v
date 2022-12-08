@@ -113,10 +113,10 @@ class IntController extends Controller {
     controllerServiceTest();
 
     //1 accessStatus, 2 elevatorStatus, 3 floorNumbers, 4 ctrlerFloor  
-    let extController1 = new ExtController(0,1,4,1);
-    let extController2 = new ExtController(0,1,4,2);
-    let extController3 = new ExtController(0,1,4,3);
-    let extController4 = new ExtController(0,1,4,4);
+    let extController1 = new ExtController(1,0,4,1);
+    let extController2 = new ExtController(1,0,4,2);
+    let extController3 = new ExtController(1,0,4,3);
+    let extController4 = new ExtController(1,0,4,4);
 
     //console.log("ext_msg: extController4 is on floor: " + extCtrler4.ctrlerFloor)
     //console.log("ext_msg:" + extController4.sMsgShow());
