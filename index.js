@@ -125,7 +125,7 @@ class IntController extends Controller {
     console.log(extController4.extElevatorCall());
 
     //1 accessStatus, 2 elevatorStatus, 3 floorNumbers
-    let intController = new IntController(0,1,4);
+    let intController = new IntController(1,0,4);
 
     //console.log("int_msg: " + intController.sMsgShow());
     console.log(intController.intControllerGoTo(2));
